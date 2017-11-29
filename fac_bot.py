@@ -5,9 +5,6 @@ import re
 
 client=discord.Client()
 
-with open(key) as f:
-	key = f.read()
-
 @client.event
 async def on_ready():
     print ('Logged in as')
@@ -29,4 +26,5 @@ async def on_message(message):
         print (message.author)
         print (message.content.find("!"))
         print (message.content)
-client.run(key)
+
+client.run("put-your-token-here")
