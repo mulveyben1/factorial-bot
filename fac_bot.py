@@ -14,7 +14,7 @@ async def on_ready():
     
 @client.event
 async def on_message(message):
-    if message.content.find('!') != -1 and message.content[1] != "@" :
+    if message.content.find('!') != -1 and message.content[message.content.find('!')-1] != "@" :
         number = int(re.search('-?\d+', message.content).group())
         if message.content.find('-') != -1:
             await client.send_message(message.channel, "You can't take the factorial of a negative number!")
