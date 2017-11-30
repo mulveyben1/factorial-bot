@@ -2,6 +2,7 @@ import math
 import discord
 import asyncio
 import re
+import conf
 
 client=discord.Client()
 
@@ -27,4 +28,4 @@ async def on_message(message):
         print (message.content.find("!"))
         print (message.content)
 
-client.run("put-your-token-here")
+client.run(conf.key)
