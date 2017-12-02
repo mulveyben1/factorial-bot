@@ -25,10 +25,10 @@ async def on_message(message):
             await client.send_message(message.channel, "https://github.com/mulveyben1/factorial-bot")
         else:
             number = int(re.search('-?\d+', message.content).group())
-            if message.content.find('-') != -1:
-                await client.send_message(message.channel, "You can't take the factorial of a negative number!")
-            elif message.content.find('!') == 0:
+            if message.content.find('!') == 0:
                 print ("Not a factorial.")
+            elif message.content.find('-') != -1:
+                await client.send_message(message.channel, "You can't take the factorial of a negative number!")
             elif (number >= 10000) :
                 await client.send_message(message.channel, "This factorial is too large to be computed in a reasonable amount of time!")
             elif (number > 6000):
