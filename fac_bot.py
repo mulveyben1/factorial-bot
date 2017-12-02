@@ -31,11 +31,15 @@ async def on_message(message):
             numberFac=math.factorial(number)
             numberFac = "{:.5E}".format(Decimal(numberFac))
             await client.send_message(message.channel, numberFac)
+        elif (message.content.find("src") != -1 or message.content.find("source") != -1)
+            await client.send_message(message.channel, "Here's a GitHub link:")
+            await client.send_message(message.channel, "https://github.com/mulveyben1/factorial-bot")
         else:
             numberFac=math.factorial(number)
             await client.send_message(message.channel, numberFac)
         print (message.author)
         print (message.content.find("!"))
         print (message.content)
+
 
 client.run(conf.key)
