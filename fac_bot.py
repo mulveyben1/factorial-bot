@@ -28,6 +28,7 @@ async def on_message(message):
             await client.send_message(message.channel, "This might take a while.")
             numberFac=math.factorial(number)
             numberFac = "{:.5E}".format(Decimal(numberFac))
+            await client.send_message(message.channel, numberFac)
         elif (number >= 10000) :
             await client.send_message(message.channel, "This factorial is too large to be computed in a reasonable amount of time!")
         else:
