@@ -24,9 +24,9 @@ async def on_message(message):
             await client.send_message(message.channel, "Here's a GitHub link:")
             await client.send_message(message.channel, "https://github.com/mulveyben1/factorial-bot")
         elif message.content.find('!') == 0:
-            print ("Not a factorial.")
+            print ("Not a factorial. (Probably a command.)")
         elif str(message.author) == "DJ Mitch#4397":
-            print ("Not a factorial,")
+            print ("Not a factorial. (DJ Mitch.)")
         else:
             number = int(re.search('-?\d+', message.content).group())
             if message.content.find('-') != -1:
