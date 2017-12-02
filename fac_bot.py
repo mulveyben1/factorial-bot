@@ -23,11 +23,13 @@ async def on_message(message):
         elif (message.content.find("source") != -1 and message.content.find("source") < message.content.find('!') ):
             await client.send_message(message.channel, "Here's a GitHub link:")
             await client.send_message(message.channel, "https://github.com/mulveyben1/factorial-bot")
+        elif message.content.find('!') == 0:
+            print ("Not a factorial.")
+        elif str(message.author) == "DJ Mitch#4397":
+            print ("Not a factorial,")
         else:
             number = int(re.search('-?\d+', message.content).group())
-            if message.content.find('!') == 0:
-                print ("Not a factorial.")
-            elif message.content.find('-') != -1:
+            if message.content.find('-') != -1:
                 await client.send_message(message.channel, "You can't take the factorial of a negative number!")
             elif (number >= 10000) :
                 await client.send_message(message.channel, "This factorial is too large to be computed in a reasonable amount of time!")
