@@ -3,6 +3,7 @@ import discord
 import asyncio
 import re
 import conf
+from decimal import Decimal
 
 client=discord.Client()
 
@@ -21,7 +22,7 @@ async def on_message(message):
             await client.send_message(message.channel, "You can't take the factorial of a negative number!")
         elif (number > 15):
             numberFac=math.factorial(number)
-            numberFac = "{:.5E}".format(numberFac)
+            numberFac = "{:.5E}".format(Decimal(numberFac))
             await client.send_message(message.channel, numberFac)
         elif (number >= 10000) :
             await client.send_message(message.channel, "This factorial is too large to be computed in a reasonable amount of time!")
