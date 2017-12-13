@@ -34,7 +34,7 @@ async def on_message(message):
             except:
                 print("Not a factorial.")
             if numberpre is None:
-                print("")
+                pass
             else:
                 number = int(numberpre[:len(numberpre)-1])
                 if message.content.find('-') != -1:
