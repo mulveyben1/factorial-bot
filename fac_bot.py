@@ -39,17 +39,29 @@ async def on_message(message):
                 number = int(numberpre[:len(numberpre)-1])
                 if message.content.find('-') != -1:
                     await client.send_message(message.channel, "You can't take the factorial of a negative number!")
+                    print (message.author)
+                    print (message.content.find("!"))
+                    print (message.content)
                 elif (number >= 10000) :
                     await client.send_message(message.channel, "This factorial is too large to be computed in a reasonable amount of time!")
+                    print (message.author)
+                    print (message.content.find("!"))
+                    print (message.content)
                 elif (number > 6000):
                     await client.send_message(message.channel, "This might take a while.")
                     numberFac = math.factorial(number)
                     numberFac = "{:.5E}".format(Decimal(numberFac))
                     await client.send_message(message.channel, numberFac)
+                    print (message.author)
+                    print (message.content.find("!"))
+                    print (message.content)
                 elif (number > 15):
                     numberFac=math.factorial(number)
                     numberFac = "{:.5E}".format(Decimal(numberFac))
                     await client.send_message(message.channel, numberFac)
+                    print (message.author)
+                    print (message.content.find("!"))
+                    print (message.content)
                 else:
                     numberFac=math.factorial(number)
                     await client.send_message(message.channel, numberFac)
